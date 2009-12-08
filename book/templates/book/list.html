@@ -1,1 +1,14 @@
 <h1>Joke list</h1>
+
+{% if all_jokes %}
+    <ul>
+    {% for joke in all_jokes %}
+        <li>{{ joke.created }}</li>
+        <li>{{ joke.content }}</li>
+        <li>{{ joke.rank }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jokes yet available.</p>
+{% endif %}
+
