@@ -1,14 +1,30 @@
-<h1>Joke list</h1>
+{% extends "base.html" %}
 
-{% if all_jokes %}
-    <ul>
-    {% for joke in all_jokes %}
-        <li>{{ joke.created }}</li>
-        <li>{{ joke.content }}</li>
-        <li>{{ joke.rank }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No jokes yet available.</p>
-{% endif %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ PROJECT_ROOT }}/static/css/book.css" />
+{% endblock %}
 
+{% block application-header %}Joke book{% endblock %}
+{% block title %}Joke book{% endblock %}
+
+
+{% block application %}
+
+{% for joke in all_jokes %}
+<div>
+    <div class="joke">{{ joke.content|linebreaks }}</div>
+    <div class="summary"> 
+      Created: {{ joke.created.date }} {{ joke.created|time:"H:i" }} 
+      Rank: {{ joke.rank }} 
+      Votes: {{ joke.votes }}
+      Author: {{ joke.author }}
+      <a href="{{ PROJECT_ROOT }}/book/vote_plus/{{ joke.id }}">(+)</a>
+      <a href="{{ PROJECT_ROOT }}/book/vote_minus/{{ joke.id }}">(-)</a>
+    </div>
+
+</div>
+{% empty %}
+    <div>No jokes yet available.</div>
+{% endfor %}
+
+{% endblock %}

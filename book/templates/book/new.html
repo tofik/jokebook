@@ -1,1 +1,43 @@
-<h1>New Joke</h1>
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ PROJECT_ROOT }}/static/css/book.css" /> 
+{% endblock %}
+
+{% block application-header %}New joke{% endblock %}
+{% block title %}New joke{% endblock %}
+
+
+{% block application %}
+
+
+<form  action="{{ PROJECT_ROOT }}/book/list/" method="POST">
+
+  <fieldset>
+    <p>
+      <label class="field_name" for="content">Your joke:</label>
+    </p>
+    <p>
+      <span class="field_value">{{ form.content }}</span>
+    </p>
+    
+  </fieldset>  
+
+  <fieldset>
+    <p>
+      <label class="field_name" for="author">Your nick:</label>
+      <span class="field_value">{{ form.author }}</span>
+    </p>
+  </fieldset>  
+
+  <fieldset>
+    <div class="field_submit">
+      <input type="submit" name="submit_joke" value="Submit joke!" />
+    </div>
+  </fieldset>
+
+
+
+</form>
+
+{% endblock %}

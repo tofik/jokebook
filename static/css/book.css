@@ -1,0 +1,87 @@
+.main	{
+	position	:	absolute;
+	width		:	400px;
+	margin-left	:	200px;	
+	text-align	:	center;
+	border		:	solid 1px #808080; 
+	left		:	0px; 
+	top		:	0px; 
+	padding		:	5px; 
+	font-size	:	small; 
+	}
+
+.joke   {
+	position	: 	relative;
+	margin		: 	0 auto;
+	width		:	90%; 
+	background-color:	ghostwhite; 
+	padding		:	5px; 
+	font-size       :       12px;
+	font-family     :       Arial, Verdana, Tahoma;
+        }
+
+.summary   {
+	position	: 	relative;
+	margin		: 	0 auto;
+	width		:	90%; 
+	background-color:	ghostwhite; 
+	padding		:	5px; 
+	font-size       :       10px;
+	font-family     :       Arial, Verdana, Tahoma;
+        }
+
+
+.field_name	{
+	font-weight	:	bold;
+	font-size       :       12px;
+	font-family     :       Arial, Verdana, Tahoma;
+	}
+
+
+
+
+
+fieldset {
+	position	: 	relative;
+	margin		: 	0 auto;
+	width		:	60%; 
+	background-color:	ghostwhite; 
+	padding		:	5px; 
+	}
+
+.results {
+	position	: 	relative;
+	margin		: 	0 auto;
+	width		:	90%; 
+	background-color:	ghostwhite; 
+	padding		:	5px; 
+	font-weight     :       bold;
+	border		:	solid 1px #808080; 
+	}
+
+
+.field_value input    {
+        width           :       200px;
+}
+
+.field_value_medium input    {
+        width           :       20px;
+}
+
+.field_char_medium input	{
+	color: gray;
+	width: 80%;  
+	height: 50px; 
+}
+
+.field_char_large input	{
+	color: gray;
+	width: 80%;  
+	height: 150px; 
+}
+
+.field_submit {
+    text-align: center;
+}
+
+
