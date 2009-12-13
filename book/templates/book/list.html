@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block css %}
-<link rel="stylesheet" type="text/css" href="{{ PROJECT_ROOT }}/static/css/book.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/book.css" />
 {% endblock %}
 
 {% block application-header %}Joke book{% endblock %}
@@ -10,7 +10,23 @@
 
 {% block application %}
 
-{% for joke in all_jokes %}
+<div>
+  <span>
+    {% if jokes.has_previous %}
+    <a href="?page={{ jokes.previous_page_number }}">previous</a>
+    {% endif %}
+
+    <span>
+        Page {{ jokes.number }} of {{ jokes.paginator.num_pages }}
+    </span>
+
+    {% if jokes.has_next %}
+        <a href="?page={{ jokes.next_page_number }}">next</a>
+    {% endif %}
+  </span>
+</div>
+
+{% for joke in jokes.object_list %}
 <div>
     <div class="joke">{{ joke.content|linebreaks }}</div>
     <div class="summary"> 
@@ -18,8 +34,8 @@
       Rank: {{ joke.rank }} 
       Votes: {{ joke.votes }}
       Author: {{ joke.author }}
-      <a href="{{ PROJECT_ROOT }}/book/vote_plus/{{ joke.id }}">(+)</a>
-      <a href="{{ PROJECT_ROOT }}/book/vote_minus/{{ joke.id }}">(-)</a>
+      <a href="/book/vote/plus/{{ joke.id }}">(+)</a>
+      <a href="/book/vote/minus/{{ joke.id }}">(-)</a>
     </div>
 
 </div>

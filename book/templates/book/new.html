@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block css %}
-<link rel="stylesheet" type="text/css" href="{{ PROJECT_ROOT }}/static/css/book.css" /> 
+<link rel="stylesheet" type="text/css" href="/static/css/book.css" /> 
 {% endblock %}
 
 {% block application-header %}New joke{% endblock %}
@@ -11,7 +11,7 @@
 {% block application %}
 
 
-<form  action="{{ PROJECT_ROOT }}/book/list/" method="POST">
+<form  action="/book/new/" method="POST">
 
   <fieldset>
     <p>
