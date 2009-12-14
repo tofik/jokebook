@@ -1,6 +1,7 @@
 import datetime
 from django.shortcuts import render_to_response, HttpResponseRedirect
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.http import Http404
 from book.models import Joke
 from book.models import *
 from book.forms import NewJokeForm
@@ -20,9 +21,27 @@ def new(request):
 
     return render_to_response('book/new.html',{'form': form})
 
-def details(request):
-    #Tofik to do
-    return render_to_response('book/details.html')
+def details(request, joke):
+
+    #fetch joke to display details for
+    joke_for_details = Joke.objects.get(id=joke)
+
+    #try to check whether there are prev and next
+    prev = int(joke) - 1 #index for previous joke
+    next = int(joke) + 1 #index for next joke
+ 
+    try:
+        previous_joke = Joke.objects.get(id=prev)
+    except Joke.DoesNotExist:
+        previous_joke = joke_for_details #if there is no previous, set current
+
+    try:
+        next_joke = Joke.objects.get(id=next)
+    except Joke.DoesNotExist:
+        next_joke = joke_for_details #if there is no next, set current
+   
+    
+    return render_to_response('book/details.html', {'joke_for_details': joke_for_details, 'next_joke':next_joke,'previous_joke':previous_joke})
 
 def list(request,order = 'created'):
 
@@ -32,9 +51,9 @@ def list(request,order = 'created'):
     #defualt order is from the latest to the oldest
     else:
         all_jokes = Joke.objects.all().order_by('-created')
-
+ 
     #pagination
-    paginator = Paginator(all_jokes, 2)
+    paginator = Paginator(all_jokes, 3)
     
     # Make sure page request is an int. If not, deliver first page.
     try:

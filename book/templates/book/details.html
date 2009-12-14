@@ -1,1 +1,27 @@
-<h1>Details</h1>
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/css/book.css"/>
+{% endblock %}
+
+{% block application-header %} Details for joke no {{joke_for_details.id}} {% endblock %}
+
+{% block title %}
+Joke details
+{% endblock %} 
+
+{% block application %}
+
+<div class="joke_details_content">
+  {% if joke_for_details %} {{joke_for_details.content}} {% endif %}
+</div>
+
+Author : {{joke_for_details.author}}     <br>
+created: {{joke_for_details.created}}    <br>
+rank   : {{joke_for_details.rank}}       <br>
+voted  : {{joke_for_details.votes}} times <br>
+
+<a href="/book/details/{{previous_joke.id}}">Previous ({{previous_joke.id}})</a>
+<a href="/book/details/{{next_joke.id}}">Next ({{next_joke.id}})</a>
+
+{% endblock %}
