@@ -1,7 +1,6 @@
 import datetime
-from django.shortcuts import render_to_response, HttpResponseRedirect
+from django.shortcuts import render_to_response, HttpResponseRedirect, get_object_or_404
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
-from django.http import Http404
 from book.models import Joke
 from book.models import *
 from book.forms import NewJokeForm
@@ -24,7 +23,7 @@ def new(request):
 def details(request, joke):
 
     #fetch joke to display details for
-    joke_for_details = Joke.objects.get(id=joke)
+    joke_for_details = get_object_or_404(Joke,pk=joke)
 
     #try to check whether there are prev and next
     prev = int(joke) - 1 #index for previous joke
@@ -41,7 +40,9 @@ def details(request, joke):
         next_joke = joke_for_details #if there is no next, set current
    
     
-    return render_to_response('book/details.html', {'joke_for_details': joke_for_details, 'next_joke':next_joke,'previous_joke':previous_joke})
+    return render_to_response('book/details.html', {'joke_for_details': joke_for_details, 
+                                                    'next_joke':next_joke,
+                                                    'previous_joke':previous_joke})
 
 def list(request,order = 'created'):
 

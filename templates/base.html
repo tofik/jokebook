@@ -6,15 +6,21 @@
     <title>{% block title %}{% endblock %}</title>
         
     {% block css %}
+    <link rel="stylesheet" type="text/css" href="/static/css/book.css" />
     {% endblock %}
 
   </head>
   <body>
+
+    {% block upper_menu %}
     <div>
       <a href="{{ PROJECT_ROOT }}/book/list/">Joke list</a>
       <a href="{{ PROJECT_ROOT }}/book/new/">Submit new joke</a>
       <a href="{{ PROJECT_ROOT }}/book/top/">The best of the best</a>
     </div>
+    {% endblock %}
+
+
     <div id="menu"></div>
     <h2>{% block application-header %}{% endblock %}</h2>
     {% block application %}
