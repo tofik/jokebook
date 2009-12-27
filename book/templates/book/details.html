@@ -12,10 +12,10 @@ Joke details
   {% if joke_for_details %} {{joke_for_details.content}} {% endif %}
 </div>
 
-Author : {{joke_for_details.author}}     <br>
-created: {{joke_for_details.created}}    <br>
-rank   : {{joke_for_details.rank}}       <br>
-voted  : {{joke_for_details.votes}} times <br>
+<div>Author : {{joke_for_details.author}}     </div>
+<div>created: {{joke_for_details.created}}    </div>
+<div>rank   : {{joke_for_details.rank}}       </div>
+<div>voted  : {{joke_for_details.votes}} times </div>
 
 <a href="/book/details/{{previous_joke.id}}">Previous ({{previous_joke.id}})</a>
 <a href="/book/details/{{next_joke.id}}">Next ({{next_joke.id}})</a>
