@@ -98,3 +98,76 @@ fieldset {
     text-align      : center;
 }
 
+
+body {
+    background-color: lightgreen;
+    height: 100%;
+    width: 100%;
+}    
+
+.center {
+    border:2px solid white;
+    text-align: center;
+    padding:0 0 10px 0;
+    width: 100%;
+
+}
+
+.frame {
+    background-image: url(images/small_orange.jpg);
+    background-position: left top;
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    padding: 70px 70px 70px 0;
+}
+
+div#upper_menu {
+    border: 1px dashed grey;
+    width: 15%;
+    float: left;
+    clear: left;
+}
+
+div#main_menu_left {
+    border: 1px dashed red;
+    width: 50%;
+    float: left;
+}
+
+div#main_menu_right {
+    position: relative;
+    border: 1px dashed green;
+    width: 30%;
+    float: left;
+    font-size: 15px;
+}
+div#lower_menu {
+    border: 1px dashed purple;
+    clear:left;
+    text-align: center;
+    width: 80%;
+}
+div#logo {
+    font-size: 60px;
+    border: 1px dotted maroon;
+    background-color: orange;
+    text-color:white;
+    width: 40%;
+    float: left;
+}
+div#sign {
+    border: 1px dashed blue;
+    float: left;
+}    
+
+.bar {
+    border: 1px dotted purple;
+    background-color: red;
+    clear: both;
+}
+
+ol {
+    list-style-position: inside;
+    list-style-type: none;
+}

@@ -11,19 +11,49 @@
 
   </head>
   <body>
+    
+    <div id="logo">
+      logo will be here
+      </div>
+    
+    <div id="sign">
+      sign
+      </div>
+    
+    <div class="bar">
+      upper bar with some crazy pattern will be here
+      </div>
 
     {% block upper_menu %}
-    <div>
-      <a href="{{ PROJECT_ROOT }}/book/list/">Joke list</a>
-      <a href="{{ PROJECT_ROOT }}/book/new/">Submit new joke</a>
-      <a href="{{ PROJECT_ROOT }}/book/top/">The best of the best</a>
+    <div id="upper_menu">
+      <p><a href="/book/list/">Joke list</a></p>
+      <p><a href="/book/new/">Submit new joke</a></p>
+      <p><a href="/book/top/">The best of the best</a></p>
     </div>
     {% endblock %}
 
 
     <div id="menu"></div>
     <h2>{% block application-header %}{% endblock %}</h2>
-    {% block application %}
-    {% endblock %}
+
+    <div id="main_menu_left">
+      {% block application %}
+      {% endblock %}
+    </div>
+
+    <div id="main_menu_right">
+      {% block right_side_menu %}
+      {% endblock %}
+    </div>
+
+    <div class="bar">
+      lower bar with some crazy pattern will be here
+      </div>
+
+    <div id="lower_menu">
+      {% block lower_menu %}
+      {% endblock %}
+      </div>
+
   </body>
 </html>

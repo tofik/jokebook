@@ -12,12 +12,21 @@ Joke details
   {% if joke_for_details %} {{joke_for_details.content}} {% endif %}
 </div>
 
-<div>Author : {{joke_for_details.author}}     </div>
-<div>created: {{joke_for_details.created}}    </div>
-<div>rank   : {{joke_for_details.rank}}       </div>
-<div>voted  : {{joke_for_details.votes}} times </div>
+{% endblock %}
 
+{% block right_side_menu %}
+<ol>
+  <li>Author : {{joke_for_details.author}}     </li>
+  <li>created: {{joke_for_details.created}}    </li>
+  <li>rank   : {{joke_for_details.rank}}       </li>
+  <li>voted  : {{joke_for_details.votes}} times </li>
+  <li>  <a href="/book/vote/plus/{{ joke_for_details.id }}">Vote for plus (+)</a>
+    <a href="/book/vote/minus/{{ joke_for_details.id }}">or for minus (-)</a></li>
+  </ol>
+      
+{% endblock %}
+
+{% block lower_menu %}
 <a href="/book/details/{{previous_joke.id}}">Previous ({{previous_joke.id}})</a>
 <a href="/book/details/{{next_joke.id}}">Next ({{next_joke.id}})</a>
-
 {% endblock %}
