@@ -45,6 +45,8 @@ def details(request, joke):
                                                     'previous_joke':previous_joke})
 
 def list(request,order = 'created'):
+    #definig dict for authors
+    all_authors = dict()
 
     #order selection
     if order == 'top':
@@ -53,6 +55,13 @@ def list(request,order = 'created'):
     else:
         all_jokes = Joke.objects.all().order_by('-created')
  
+    #fetch authors
+    for joke in all_jokes:
+        if joke.author in all_authors:
+            all_authors[joke.author] += 1
+        else:
+            all_authors[joke.author]  = 1
+
     #pagination
     paginator = Paginator(all_jokes, 3)
     
@@ -68,7 +77,7 @@ def list(request,order = 'created'):
     except (EmptyPage, InvalidPage):
         jokes = paginator.page(paginator.num_pages)
 
-    return render_to_response('book/list.html', {'jokes': jokes})
+    return render_to_response('book/list.html', {'jokes': jokes, 'authors': all_authors})
 
 def vote(request,direction,joke_id):
     

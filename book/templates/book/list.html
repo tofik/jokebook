@@ -36,8 +36,19 @@
     </div>
 
 </div>
+
 {% empty %}
     <div>No jokes yet available.</div>
+{% endfor %}
+
+{% endblock %}
+
+{% block right_side_menu %}
+
+Here is a list of authors, that posted jokes:
+
+{% for author in authors %}
+<div>{{author}} posted {{authors}}</div>
 {% endfor %}
 
 {% endblock %}
