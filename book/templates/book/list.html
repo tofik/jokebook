@@ -45,10 +45,14 @@
 
 {% block right_side_menu %}
 
-Here is a list of authors, that posted jokes:
+<h3>Here is a list of authors, that posted jokes:</h3>
+
+{% for name, count in authors.items %}
+<div>{{ name }} posted {{ count }}</div>
+{% endfor %}
 
 {% for author in authors %}
-<div>{{author}} posted {{authors}}</div>
+<div> {{ author.author }} </div>
 {% endfor %}
 
 {% endblock %}
