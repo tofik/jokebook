@@ -15,14 +15,15 @@ Joke details
 {% endblock %}
 
 {% block right_side_menu %}
-<ol>
+<ul>
   <li>Author : {{joke_for_details.author}}     </li>
   <li>created: {{joke_for_details.created}}    </li>
   <li>rank   : {{joke_for_details.rank}}       </li>
   <li>voted  : {{joke_for_details.votes}} times </li>
-  <li>  <a href="/book/vote/plus/{{ joke_for_details.id }}">Vote for plus (+)</a>
-    <a href="/book/vote/minus/{{ joke_for_details.id }}">or for minus (-)</a></li>
-  </ol>
+</ul>
+<a href="/book/vote/plus/{{ joke_for_details.id }}">Vote for plus (+)</a>
+<a href="/book/vote/minus/{{ joke_for_details.id }}">or for minus (-)</a>
+ 
       
 {% endblock %}
 

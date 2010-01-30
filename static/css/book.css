@@ -14,7 +14,7 @@
 	position	: 	relative;
 	margin		: 	0 auto;
 	width		:	90%; 
-	background-color:	ghostwhite; 
+	background-color:	#C6F66F; 
 	padding		:	5px; 
 	font-size       :       12px;
 	font-family     :       Arial, Verdana, Tahoma;
@@ -25,7 +25,7 @@
 	position	: 	relative;
 	margin		: 	0 auto;
 	width		:	90%; 
-	background-color:	ghostwhite; 
+	background-color:	#C6F66F; 
 	padding		:	5px; 
 	font-size       :       10px;
 	font-family     :       Arial, Verdana, Tahoma;
@@ -100,9 +100,11 @@ fieldset {
 
 
 body {
-    background-color: lightgreen;
+    background-color: #B4F63D;
+    background-image: url(bg_02.jpg);
     height: 100%;
     width: 100%;
+    color: black;
 }    
 
 .center {
@@ -122,52 +124,113 @@ body {
     padding: 70px 70px 70px 0;
 }
 
-div#upper_menu {
-    border: 1px dashed grey;
+ul {
+    list-style-position: inside;
+    list-style-type: none;
+}
+
+#upper_menu {
     width: 15%;
     float: left;
     clear: left;
 }
 
-div#main_menu_left {
-    border: 1px dashed red;
+#upper_menu ul {
+    list-style: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+#upper_menu li {
+    border-bottom: 1px solid white;
+}
+
+#upper_menu li a {
+    padding: 5px 5px 5px 5px;
+    border-left:10px solid #639A00;
+    text-decoration: none;
+    color: white;
+    display: block;
+    background-color: #82B22C;
+}
+
+#upper_menu a:hover {
+    background-color: #639A00;
+}
+
+#main_menu_left {
     width: 50%;
     float: left;
 }
 
-div#main_menu_right {
+#main_menu_right {
     position: relative;
-    border: 1px dashed green;
     width: 30%;
     float: left;
     font-size: 15px;
 }
-div#lower_menu {
-    border: 1px dashed purple;
+
+#main_menu_right ul {
+    display: block;
+    background-color: #82B22C;
+    margin: 0 50px 1px 0px;
+    padding: 0 0 0 0;
+}
+
+#main_menu_right li {
+    text-align: left;
+    border-right: 50px solid #639A00;
+}
+
+#main_menu_right li {
+    padding: 2px 2px 2px 2px;
+    color: white;
+}
+
+#main_menu_right a {
+    background-color: #82B22C;
+    color: white;
+    text-decoration: none;
+    padding: 0 22px 0 22px;
+    border-left: 10px solid #639A00;
+}
+
+#main_menu_right a:hover {
+    background-color: #639A00;
+}
+
+#lower_menu {
     clear:left;
     text-align: center;
     width: 80%;
 }
-div#logo {
+
+#lower_menu a {
+    border-left:10px solid #639A00;
+    background-color: #82B22C;
+    color: white;
+    text-decoration: none;
+    padding: 0px 10px 0px 10px;
+}
+
+#lower_menu a:hover {
+    background-color: #639A00;
+}
+
+#logo {
     font-size: 60px;
-    border: 1px dotted maroon;
-    background-color: orange;
+    background-color: #98ED00;
     text-color:white;
     width: 40%;
     float: left;
 }
-div#sign {
-    border: 1px dashed blue;
+#sign {
     float: left;
 }    
 
 .bar {
-    border: 1px dotted purple;
-    background-color: red;
+    background-color: #639A00;
     clear: both;
 }
 
-ol {
-    list-style-position: inside;
-    list-style-type: none;
-}

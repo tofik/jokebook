@@ -43,16 +43,18 @@
 
 {% endblock %}
 
+
+
+
 {% block right_side_menu %}
 
-<h3>Here is a list of authors, that posted jokes:</h3>
+<h3>Number of jokes posted by particular author:</h3>
 
 {% for name, count in authors.items %}
-<div>{{ name }} posted {{ count }}</div>
+<ul>
+  <li>{{ name }} - {{ count }}</li>
+</ul>
 {% endfor %}
 
-{% for author in authors %}
-<div> {{ author.author }} </div>
-{% endfor %}
 
 {% endblock %}

@@ -46,7 +46,7 @@ def details(request, joke):
 
 def list(request,order = 'created'):
     #definig dict for authors
-    #all_authors = dict()
+    all_authors = dict()
 
     #order selection
     if order == 'top':
@@ -56,12 +56,12 @@ def list(request,order = 'created'):
         all_jokes = Joke.objects.all().order_by('-created')
  
     #fetch authors - number of book also available
-#    for joke in all_jokes:
-#        if joke.author in all_authors:
-#            all_authors[joke.author] += 1
-#        else:
-#            all_authors[joke.author]  = 1
-    all_authors = Joke.objects.values('author') #no of book notknown
+    for joke in all_jokes:
+        if joke.author in all_authors:
+            all_authors[joke.author] += 1
+        else:
+            all_authors[joke.author]  = 1
+    #all_authors = Joke.objects.values('author') #no of book notknown
 
     #pagination
     paginator = Paginator(all_jokes, 3)
