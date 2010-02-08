@@ -101,7 +101,7 @@ fieldset {
 
 body {
     background-color: #B4F63D;
-    background-image: url(bg_02.jpg);
+#    background-image: url(bg_02.jpg);
     height: 100%;
     width: 100%;
     color: black;
@@ -129,10 +129,9 @@ ul {
     list-style-type: none;
 }
 
-#upper_menu {
+#left_pane {
     width: 15%;
     float: left;
-    clear: left;
 }
 
 #upper_menu ul {
@@ -148,7 +147,6 @@ ul {
 
 #upper_menu li a {
     padding: 5px 5px 5px 5px;
-    border-left:10px solid #639A00;
     text-decoration: none;
     color: white;
     display: block;
@@ -159,15 +157,29 @@ ul {
     background-color: #639A00;
 }
 
-#main_menu_left {
-    width: 50%;
+
+#logo_left {
+    background-image: url(blazen_na_patyku_zielony.png);
+    height: 450px;
+    opacity: 1;
+    background-repeat: no-repeat;
+}
+
+
+#central_pane {
+    width: 40%;
     float: left;
 }
 
-#main_menu_right {
-    position: relative;
-    width: 30%;
+#main_menu_left {
+}
+
+#right_pane {
     float: left;
+    clear: right;
+}
+
+#main_menu_right {
     font-size: 15px;
 }
 
@@ -200,6 +212,13 @@ ul {
     background-color: #639A00;
 }
 
+#logo_right {
+    background-image: url(fight_green.png);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 #lower_menu {
     clear:left;
     text-align: center;
@@ -225,8 +244,12 @@ ul {
     width: 40%;
     float: left;
 }
+
 #sign {
     float: left;
+    background-image: url(logo_blazny_01_male.png);
+    height: 94px;
+    width: 100px;
 }    
 
 .bar {

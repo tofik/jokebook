@@ -13,49 +13,56 @@
   <body>
     
     <div id="logo">
-      logo will be here
-      </div>
+      jokebook
+    </div>
     
     <div id="sign">
-      sign
-      </div>
+    </div>
     
     <div class="bar">
       upper bar with some crazy pattern will be here
+    </div>
+    
+    <div id="left_pane">
+      <div id="upper_menu">
+	<ul>
+	  <li><a href="/book/list/">Joke list</a></li>
+	  <li><a href="/book/new/">Submit new joke</a></li>
+	  <li><a href="/book/top/">The best of the best</a></li>
+	</ul>
       </div>
-
-    {% block upper_menu %}
-    <div id="upper_menu">
-      <ul>
-	<li><a href="/book/list/">Joke list</a></li>
-	<li><a href="/book/new/">Submit new joke</a></li>
-	<li><a href="/book/top/">The best of the best</a></li>
-      </ul>
+      
+      <div id="logo_left">
+      </div>
     </div>
-    {% endblock %}
-
-
-    <div id="menu"></div>
-    <h2>{% block application-header %}{% endblock %}</h2>
-
-    <div id="main_menu_left">
-      {% block application %}
-      {% endblock %}
+    
+    <div id="central_pane">
+      <div id="menu"></div>
+      <h2>{% block application-header %}{% endblock %}</h2>
+      
+      <div id="main_menu_left">
+	{% block application %}
+	{% endblock %}
+      </div>
     </div>
-
-    <div id="main_menu_right">
-      {% block right_side_menu %}
-      {% endblock %}
+    
+    <div id="right_pane">
+      <div id="main_menu_right">
+	{% block right_side_menu %}
+	{% endblock %}
+      </div>
+      <div id="logo_right">
+      </div>
     </div>
-
+    
     <div class="bar">
       lower bar with some crazy pattern will be here
-      </div>
-
+    </div>
+    
     <div id="lower_menu">
       {% block lower_menu %}
       {% endblock %}
-      </div>
-
+    </div>
+    
   </body>
 </html>
